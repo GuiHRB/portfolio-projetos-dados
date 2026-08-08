@@ -1,0 +1,426 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Data Analyst Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-fixed": "#1a1c1c",
+                "on-error": "#690005",
+                "surface-variant": "#353535",
+                "tertiary-fixed-dim": "#c6c6c7",
+                "on-primary": "#2f3131",
+                "surface-bright": "#393939",
+                "surface-container": "#1f2020",
+                "on-tertiary-container": "#636565",
+                "on-tertiary-fixed-variant": "#454747",
+                "surface-container-lowest": "#0e0e0e",
+                "on-secondary-container": "#ffb3ad",
+                "tertiary-fixed": "#e2e2e2",
+                "on-primary-fixed-variant": "#454747",
+                "tertiary-container": "#e2e2e2",
+                "secondary-fixed-dim": "#ffb3ae",
+                "surface-container-highest": "#353535",
+                "inverse-on-surface": "#303030",
+                "surface-container-low": "#1b1c1c",
+                "secondary": "#ffb3ae",
+                "surface-tint": "#c6c6c7",
+                "on-primary-fixed": "#1a1c1c",
+                "primary-container": "#e2e2e2",
+                "outline": "#8e9192",
+                "error-container": "#93000a",
+                "on-secondary": "#68000b",
+                "background": "#131313",
+                "inverse-surface": "#e4e2e1",
+                "on-primary-container": "#636565",
+                "secondary-container": "#a90219",
+                "on-error-container": "#ffdad6",
+                "on-tertiary": "#2f3131",
+                "primary-fixed": "#e2e2e2",
+                "error": "#ffb4ab",
+                "on-surface": "#e4e2e1",
+                "on-surface-variant": "#c4c7c8",
+                "surface": "#131313",
+                "surface-dim": "#131313",
+                "inverse-primary": "#5d5f5f",
+                "tertiary": "#ffffff",
+                "outline-variant": "#444748",
+                "on-background": "#e4e2e1",
+                "surface-container-high": "#2a2a2a",
+                "on-secondary-fixed": "#410004",
+                "primary-fixed-dim": "#c6c6c7",
+                "primary": "#ffffff",
+                "on-secondary-fixed-variant": "#930014",
+                "secondary-fixed": "#ffdad7"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "unit": "8px",
+                "gutter": "24px",
+                "container-max": "1200px",
+                "margin-desktop": "64px",
+                "margin-mobile": "20px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "display-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-lg-mobile": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-sm": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Plus Jakarta Sans"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "72px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 24px -4px rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-hover:hover {
+            border-color: theme('colors.outline');
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px -8px rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md bg-background">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-background/90 backdrop-blur-md border-b border-white/10 flat no shadows flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto transition-all duration-300">
+<div class="text-[28px] font-headline-md font-extrabold text-on-surface">Data Portfolio</div>
+<div class="hidden md:flex items-center space-x-gutter">
+<a class="text-primary border-b-2 border-primary pb-1 text-label-sm font-label-sm scale-95 opacity-100" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary transition-all duration-300 text-label-sm font-label-sm" href="#projects">Projects</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary transition-all duration-300 text-label-sm font-label-sm" href="#skills">Skills</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary transition-all duration-300 text-label-sm font-label-sm" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary transition-all duration-300 text-label-sm font-label-sm" href="#contact">Contact</a>
+</div>
+<a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm hover:glow-effect transition-all duration-300" href="#contact">
+            Let's Talk
+            <span class="material-symbols-outlined ml-2 text-[18px]">arrow_outward</span>
+</a>
+</nav>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- SnapFolio Hero Section -->
+<section class="py-[120px] flex flex-col md:flex-row items-center justify-between gap-12 mt-12 md:mt-24 md:items-center">
+<div class="w-full md:w-1/2 flex flex-col items-start justify-center">
+<h1 class="text-display-lg font-display-lg text-primary mb-6 leading-none">Bem-vindo (a),</h1>
+<h2 class="text-headline-md font-headline-md text-primary mb-2">Eu sou Guilherme Henrique</h2>
+
+<p class="text-body-md text-on-surface-variant mb-10 max-w-md"></p><div class="space-y-4 text-on-surface-variant"><div class="">Neste espaço, você irá encontrar meu portfólio, onde apresento projetos de dados para diferentes setores com foco em resolver problemas reais e otimizar processos.</div><div class="">Aqui você encontrará minhas experiências e estudos práticos que demonstram minha capacidade de transformar dados em insights estratégicos, ajudando empresas a tomarem decisões mais inteligentes e gerando valor para os negócios.<div><br></div><div><br></div><div><br><div><br></div></div></div></div><p class=""></p>
+<div class="flex flex-wrap gap-4 mb-12">
+<a class="px-8 py-3.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm hover:glow-effect transition-all duration-300" href="#portfolio">Meus projetos</a>
+<a class="px-8 py-3.5 rounded-full border border-outline-variant text-on-surface font-label-sm text-label-sm hover:border-outline transition-all duration-300" href="#contact">Currículo</a>
+</div>
+<div class="flex gap-4">
+
+
+
+
+</div>
+</div>
+<div class="w-full md:w-1/2 flex justify-center md:justify-end">
+<div class="w-full max-w-[480px] aspect-square rounded-[32px] overflow-hidden bg-surface-container-high border border-outline-variant/20 shadow-2xl">
+<img alt="Marcus Thompson" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzsMEqLYx0nOS2B8PvDD-5ZsCRCXCSjAP9oDczeBRIvEcytnud7ATPRSM8v-XUTwwOGYsauKsW3aOxYhdDelrCmO2CgCv6ncIoWvn3AO6FHV4YAkKozEeU-QvqXm3bVpTel5H4ay09rLjTsJiVMLSB4MbcI2xU1o49fp_vCHW-26gOjjoGidaxAOQEEHr5NmC1AzqgGggGKXI4nTviZ3WN2dsAlO5HRUKZqxBlJ7_RWcPAG73-dfgsZpaYTUYu1uHzw_vRtlS2x1Q3RA">
+</div>
+</div>
+</section>
+<!-- Sobre Mim Section -->
+<section class="py-[120px] flex flex-col justify-center border-t border-outline-variant/30" id="about"><div class="text-center mb-16"><h2 class="text-headline-lg font-headline-lg text-on-surface mb-4">&nbsp;<span style="letter-spacing: -0.02em;" class="">—&nbsp;</span><span style="letter-spacing: -0.02em;" class="">Sobre Mim&nbsp;</span><span style="letter-spacing: -0.02em;" class="">—</span></h2></div><div class="grid-cols-1 md:grid-cols-12 gap-16 items-start">
+<!-- Left Column: Profile Card -->
+<!-- Right Column: Content Area -->
+<div class="flex flex-col">
+<div class="text-on-surface-variant font-body-lg text-body-lg mb-12 space-y-4"><p class="">Atuo com Análise de Dados com foco em clareza, estrutura e apoio à tomada de decisão, indo além de relatórios e dashboards.</p><p class="">Ao longo da minha trajetória, tenho trabalhado em projetos de dados de ponta a ponta, transformando problemas de negócio em análises objetivas e acionáveis. Minha base em Análise de Dados, Estatística e raciocínio analítico me permite abordar desafios com consistência, priorizando método e entendimento antes de soluções rápidas.</p><p class="">Meu trabalho vai além de gerar métricas. Busco entender o impacto real dos dados e como eles influenciam decisões. Isso inclui análises exploratórias profundas, construção de indicadores relevantes e suporte à validação de hipóteses em cenários reais.</p><p class="">Tenho experiência em todo o ciclo de dados, incluindo coleta, tratamento, análise exploratória, visualização e construção de dashboards, utilizando ferramentas como SQL, Python, Power BI e Excel. Também atuo na definição de métricas e no suporte a áreas de negócio para transformar dados em insights estratégicos.</p><p class="">Além da parte técnica, colaboro diretamente com times de negócio, produto e liderança, traduzindo dados em informações claras e relevantes para apoiar decisões de impacto.</p><p class="">Acredito que uma boa Análise de Dados não está na complexidade, mas na clareza, na consistência e na capacidade de gerar valor real para o negócio.</p></div>
+<!-- Stats Bar -->
+<!-- Details Grid -->
+<!-- Buttons -->
+</div>
+</div></section><section class="py-[120px] border-t border-outline-variant/30" id="resume">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-4"><span style="letter-spacing: -0.02em;" class="">—&nbsp;</span>Currículo&nbsp;<span style="letter-spacing: -0.02em;" class="">—</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-stretch">
+<!-- Sidebar Column -->
+<aside class="md:col-span-4 space-y-8 h-full">
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant h-full">
+<div class="aspect-square w-full rounded-xl overflow-hidden mb-6">
+<img alt="Marcus Thompson" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB-W-9zxyYgpZnnDChpwXq5x9-DpwFyi5kNRuRoTfPkiQxzXrci-JAJV7yqfS3Y4zawzkzJyjCfnq2l4-Yu4XcTdEzlclRdJGcTA7nziCc0MYNaBqOT6LBWj2GDq6vvFjL3VUB_dgl5hlMd3dw0tw9_Z6PapRktV2I2r_8lFokD218wkPmynLDWlGT3VlpVst7MNTt5B8lwqmbKyLgM8CpT3BsY9Xe6zPrSIvysI7yFkrhunJ2pEg2oj6C-XF5plmY0wvzs1_g-CLg3w">
+</div>
+<div class="mb-8">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-4">Resumo Profissional</h3>
+<p class="text-on-surface-variant text-body-md text-justify"><p data-path-to-node="0" class="mb-4">Analista de Dados com experiência em transformar dados de engenharia, operações e sustentabilidade em soluções estratégicas.</p><p data-path-to-node="0" class=""><br></p><p data-path-to-node="1" class="">Responsável pela criação de dashboards, validação estatística de KPIs e automação de processos para acelerar a tomada de decisão orientada a dados.</p></p>
+</div>
+<div class="mb-8">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-4">Informações de Contato</h3>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="text-body-md">742 Evergreen Terrace, Springfield, MA 02101</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="text-body-md">guilhermeborbaofc@gmail.com</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">call</span>
+<span class="text-body-md">+55 (081) 97104-4707</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">link</span>
+<span class="text-body-md break-all">https://www.linkedin.com/in/guilherme-henrique-5a1327278/</span>
+</li>
+</ul>
+</div>
+</div>
+</aside>
+<!-- Main Content Column -->
+<div class="md:col-span-8 space-y-12">
+<!-- Experience -->
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-[32px]">work</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Experiência Profissional</h3>
+</div>
+<div class="space-y-8 border-l-2 border-outline-variant ml-4 pl-8">
+<div class="relative">
+<div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary"></div>
+<h4 class="text-headline-md text-[20px] text-on-surface">Analyst</h4>
+<p class="text-label-sm text-on-surface-variant mb-2">Abril 2026 - Presente</p>
+<div class="flex items-center gap-2 text-on-surface mb-4">
+<span class="material-symbols-outlined text-[18px]">corporate_fare</span>
+<span class="font-label-sm">PROGEN SA (ALOCADO HEINEKEN)</span>
+</div>
+<ul class="list-disc list-inside text-on-surface-variant space-y-2 text-body-md">
+<li class="">Desenvolvi soluções orientadas a dados para otimização de processos e geração de insights acionáveis para as áreas de engenharia</li>
+<li class="">Apliquei métodos estatísticos de validação e teste de hipóteses em KPIs de sustentabilidade e meio ambiente, garantindo maior confiabilidade dos indicadores</li>
+<li class="">Desenvolvi dashboards em Power BI, proporcionando maior visibilidade de KPIs operacionais e de sustentabilidade para suporte à tomada de decisão</li>
+<li class="">Automatizei processos internos por meio do desenvolvimento de aplicações em Power Apps, aumentando eficiência e reduzindo atividades manuais</li>
+</ul>
+<div class="mt-4 font-bold text-on-surface text-body-md">Tech Stack: SQL, Excel, Python, Power BI, Power Platform, Data Analysis, Data Visualization, KPIs</div></div>
+<div class="relative">
+<div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary"></div>
+<h4 class="text-headline-md text-[20px] text-on-surface">Internship</h4>
+<p class="text-label-sm text-on-surface-variant mb-2">Dezembro 2024 - Março 2026</p>
+<div class="flex items-center gap-2 text-on-surface mb-4">
+<span class="material-symbols-outlined text-[18px]">corporate_fare</span>
+<span class="font-label-sm">HEINEKEN</span>
+</div>
+<ul class="list-disc list-inside text-on-surface-variant space-y-2 text-body-md">
+<li class="">Monitorei e realizei análises de KPIs (TMR, cumprimento de planos), com foco em eficiência operacional e data-driven decision making</li>
+<li class="">Desenvolvi dashboards e relatórios gerenciais, aumentando visibilidade e suporte estratégico, gerando insights acionáveis e interface com áreas de negócio</li>
+<li class="">Estruturei e realizei o tratamento de dados, garantindo data quality e consistência analítica</li>
+</ul>
+<div class="mt-4 font-bold text-on-surface text-body-md">Tech Stack: SQL, Excel, Python, SAP ERP, Power BI, Data Analysis, Data Visualization, KPIs</div>
+</div>
+</div>
+</div>
+<!-- Education -->
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-[32px]">school</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Educação</h3>
+</div>
+<div class="space-y-8 border-l-2 border-outline-variant ml-4 pl-8">
+<div class="relative">
+<div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary"></div>
+<h4 class="text-headline-md text-[20px] text-on-surface">Bacharelado em Engenharia Elétrica Eletrônica</h4>
+<p class="text-label-sm text-on-surface-variant mb-2">2021 - Presente</p>
+<div class="flex items-center gap-2 text-on-surface mb-2">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span class="font-label-sm text-on-surface">Universidade de Pernambuco</span>
+</div>
+<div class="text-on-surface-variant text-body-md space-y-4">
+<p class="">Durante a graduação em Engenharia, desenvolvi forte raciocínio analítico, capacidade de resolução de problemas e tomada de decisão orientada por dados. Atuei no setor de Estratégia de uma empresa júnior, realizando análises de custos, acompanhamento de KPIs, estruturação de informações e apresentação de resultados para stakeholders. Essa experiência consolidou meu interesse por Análise de Dados e pelo uso de dados como ferramenta para geração de insights e suporte à tomada de decisão.</p>
+<p class="">Disciplinas relevantes: Probabilidade e Estatística, Cálculo, Álgebra Linear, Processos Estocásticos e Inteligência Artificial.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Certifications -->
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-[32px]">verified</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Certificações</h3>
+</div>
+<div class="space-y-6 border-l-2 border-outline-variant ml-4 pl-8">
+<div class="relative">
+<div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary"></div>
+<h4 class="text-headline-md text-[20px] text-on-surface">Formação Profissional em Inteligência Artificial Industrial - SENAI</h4>
+<p class="text-label-sm text-on-surface-variant">2025</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<!-- Skills & Tools -->
+<section class="py-[120px] border-t border-outline-variant/30" id="skills">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-4"><span style="letter-spacing: -0.02em;" class="">—&nbsp;</span>Ferramentas e Tecnologias&nbsp;<span style="letter-spacing: -0.02em;" class="">—</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col">
+<span class="material-symbols-outlined text-primary text-[32px] mb-6">database</span>
+<h3 class="text-on-surface font-headline-md text-[20px] mb-4">SQL &amp; Databases</h3>
+<p class="text-on-surface-variant text-body-md">Expertise em modelagem e extração de dados complexos utilizando PostgreSQL e MySQL para garantir integridade e performance.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col">
+<span class="material-symbols-outlined text-primary text-[32px] mb-6">code</span>
+<h3 class="text-on-surface font-headline-md text-[20px] mb-4">Programação</h3>
+<p class="text-on-surface-variant text-body-md">Desenvolvimento de scripts robustos em Python com foco em análise estatística, limpeza de dados e machine learning (Pandas, Scikit-learn).</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col">
+<span class="material-symbols-outlined text-primary text-[32px] mb-6">bar_chart</span>
+<h3 class="text-on-surface font-headline-md text-[20px] mb-4">Visualização</h3>
+<p class="text-on-surface-variant text-body-md">Criação de dashboards interativos e narrativas visuais impactantes utilizando Power BI e Tableau.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col">
+<span class="material-symbols-outlined text-primary text-[32px] mb-6">cloud</span>
+<h3 class="text-on-surface font-headline-md text-[20px] mb-4">Cloud Computing</h3>
+<p class="text-on-surface-variant text-body-md">Implementação e gestão de pipelines de dados em ambientes AWS e Azure, focando em escalabilidade e segurança.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col">
+<span class="material-symbols-outlined text-primary text-[32px] mb-6">insights</span>
+<h3 class="text-on-surface font-headline-md text-[20px] mb-4">Análise Avançada</h3>
+<p class="text-on-surface-variant text-body-md">Domínio de técnicas estatísticas avançadas e Excel Avançado para extração de insights acionáveis.</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col">
+<span class="material-symbols-outlined text-primary text-[32px] mb-6">work</span>
+<h3 class="text-on-surface font-headline-md text-[20px] mb-4">Processos Analíticos</h3>
+<p class="text-on-surface-variant text-body-md">Aplicação de metodologias ágeis e documentação rigorosa para garantir a entrega de projetos de dados de alta qualidade.</p>
+</div>
+</div>
+</section><section class="py-[120px] border-t border-outline-variant/30" id="portfolio">
+<div class="text-center mb-16"><h2 class="text-headline-lg font-headline-lg text-on-surface mb-4"><span style="letter-spacing: -0.02em;" class="">—&nbsp;</span>Portfolio&nbsp;<span style="letter-spacing: -0.02em;" class="">—</span></h2></div>
+<div class="flex flex-col items-center w-full"><div class="flex flex-wrap justify-center gap-3 mb-12"><button class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-sm text-label-sm">All</button><button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm">Strategy</button><button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm">Finance</button><button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm">Operations</button><button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm">Technology</button></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-16"><div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col"><div class="aspect-[4/3] overflow-hidden"><img alt="Business Growth Strategy" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ4wRarvPt7ZM4s5xsdE6MUlBqPU-we-7dK6614kF7qSjN23TxV_HrOP4De3zROYkc3R5BYowTAk8dSPpG-wDbuH4RdOclGoDjoQecu7Bue8cXPWT5JHyshw7eCXvRZzw6DhbluAX_VJDfQnFfBeffLuuk_rHsMndp-vUgd0dyks8WCD_izBu8CGJblNuvrMEHSckqdLUtBBEx32tvk7XEEXKNz-e0CTZAE0cYibd-ZVGBy8yBdchE5I4PecclbkDsOQ"></div><div class="p-6 flex flex-col flex-grow"><h4 class="text-on-surface font-headline-md text-[20px] mb-1">Business Growth Strategy</h4><p class="text-on-surface-variant text-label-sm mb-4">Strategic Planning</p><div class="mt-auto flex gap-2"><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Strategy</span><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Consulting</span></div></div></div><div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col"><div class="aspect-[4/3] overflow-hidden"><img alt="Financial Restructuring" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgjulNY3LTTApsKjhMrQ-gailcuFnoVyK1Y8OxLaGtGGzW4aNgirRbU4eDGkGQwZBXY9yDVq5v0Av2sHwAw0IvBduJfEju8FcPzEta9GhKrUHLs2AaoVbOlz8ql5oMdAWWFkap5383O8Xj4OBorXpa3YSrXD5GH5dk-guJqx-IuyreUH7e6knYmRg-4YACKWL9HeOj1PC07036YCxKPITH1dSgdJlMjbHdmdEoTr-NAiBxbQVfz4VkNipdrEi6zB41Mg"></div><div class="p-6 flex flex-col flex-grow"><h4 class="text-on-surface font-headline-md text-[20px] mb-1">Financial Restructuring</h4><p class="text-on-surface-variant text-label-sm mb-4">Financial Advisory</p><div class="mt-auto flex gap-2"><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Finance</span><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Investment</span></div></div></div><div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col"><div class="aspect-[4/3] overflow-hidden"><img alt="Supply Chain Optimization" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4fLqK4BvDgeybK9wDzdst5dFK516io-Pe3Zm3YphZJdklA_getFlcyyJ00rA1YThUPvr7AQgG5I-oAHQv3_MQgDfl9VUdWwfxn3F3uOe78GW46sz-C5Eac4hXV5oV400kwPrZPCIDFuIFlbi_q6kququ_7-8jemFrnN4ykVArgrD5AAYHinB0Tlp88p4KmWsWMrjef7sYk1nhS-kyBJaumSHoGCtlNZeLzoQrqIH04mQedMKdFuFqGt40FRxR-xs_Mw"></div><div class="p-6 flex flex-col flex-grow"><h4 class="text-on-surface font-headline-md text-[20px] mb-1">Supply Chain Optimization</h4><p class="text-on-surface-variant text-label-sm mb-4">Operations Management</p><div class="mt-auto flex gap-2"><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Operations</span><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Logistics</span></div></div></div><div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col"><div class="aspect-[4/3] overflow-hidden"><img alt="Digital Transformation" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwfunannXbctgyOspT8dPbi3_8_lQMrGd7Yyv5UrdlqPLPwhNsdlrU6CcGWsd8_TCG8dUKEnSQwnoZlLzn1BW5Sn514GRKIzBkvcdyjupLOFnGukCwtQzafD5xtfD41FgKD6PnEt0cOwF9FQx-ONBkSs_F-jWTPFpfmP4fWzqWrZRg-vQXSE0Y99pJP_9bhZNUf0GkwnHUhSGM7yqBKizY8HkroFux-CmbBvwxf-HGaR_Na8pn-5h_KUHnTaMXcK404w"></div><div class="p-6 flex flex-col flex-grow"><h4 class="text-on-surface font-headline-md text-[20px] mb-1">Digital Transformation</h4><p class="text-on-surface-variant text-label-sm mb-4">Technology Consulting</p><div class="mt-auto flex gap-2"><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Technology</span><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Innovation</span></div></div></div><div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col"><div class="aspect-[4/3] overflow-hidden"><img alt="Market Expansion" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC84HX8X5RagfDt_RoIH8DCLKmcIQEpV1y4FrHe2RPx4O5jPY25voXtbZiI8YJTyJhEe6JegsgXiztGlsEKRmCuGU67UFm2bgWj__OekByj_rbGjJrdQR1EQR8pse6TlIc_mOtUCQFtXLEwHIYn57n371MdmTIhYfiooa0Q6w8hbLX1qoygOIC_hSc8x0rC9fqDcC6F5TUBP5akvSkPSbmE3XluPdLz1f2VnZ2vogvGV72a1002EJIQGAOVUfl-cvqPXQ"></div><div class="p-6 flex flex-col flex-grow"><h4 class="text-on-surface font-headline-md text-[20px] mb-1">Market Expansion</h4><p class="text-on-surface-variant text-label-sm mb-4">Strategic Planning</p><div class="mt-auto flex gap-2"><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Strategy</span><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Growth</span></div></div></div><div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 card-hover transition-all duration-300 flex flex-col"><div class="aspect-[4/3] overflow-hidden"><img alt="Investment Strategy" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOdhpuT6m3yxUDP1mRKIVKYB0v6Nu69pMcdN-Faqr119aYNyykILk6RddPOB4D_5OGrSSdpJnAAzh1R_sowmfvpNWektod_9JqwmthwUiLpb9QPlK183QoWA_qTxPBCkqm5zwyK8NRQrWo1Qsr9bAWErT85fxIdqYoJUJ_UEkR-7nthpdvTxOLB8CP5ohfhrnx1nQlhTDNwSmX6Ql7iRAnjqpD4zIbHU6tkSPYOKu2BOnWjJiGlq8CNhqI4-AYTwCITg"></div><div class="p-6 flex flex-col flex-grow"><h4 class="text-on-surface font-headline-md text-[20px] mb-1">Investment Strategy</h4><p class="text-on-surface-variant text-label-sm mb-4">Financial Advisory</p><div class="mt-auto flex gap-2"><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Finance</span><span class="px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-[12px]">Investment</span></div></div></div></div><a class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm hover:glow-effect transition-all duration-300" href="#">View All Case Studies</a></div>
+</section>
+<!-- About Section -->
+</main>
+<!-- Footer -->
+<footer class="bg-background border-t border-outline-variant/30 mt-auto" id="contact">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<div class="text-on-surface-variant font-body-md text-body-md">
+                    © 2024 Data Analyst Portfolio. Engineered for precision.
+                </div>
+</div>
+<div class="flex flex-col items-center md:items-end">
+<div class="flex space-x-8 mb-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 flex items-center gap-2 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">link</span>
+                        LinkedIn
+                    </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 flex items-center gap-2 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">code</span>
+                        GitHub
+                    </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 flex items-center gap-2 font-label-sm text-label-sm" href="mailto:hello@example.com">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+                        Email
+                    </a>
+</div>
+</div>
+</div>
+</footer>
+
+
+</body></html>
